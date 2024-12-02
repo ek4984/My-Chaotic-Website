@@ -1,0 +1,382 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* General theme variables */
+:root {
+    --background-color: #ffe6e6;
+    --text-color: #660000;
+    --header-color: #cc0000;
+    --button-color: #990000;
+    --button-hover-color: #660000;
+}
+
+body {
+    background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ffff00);
+    background-size: 400% 400%;
+    animation: chaoticBackground 5s infinite;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+     text-align: center;
+    font-size: 3rem;
+    font-family: 'Courier New', monospace;
+    color: #ff00ff;
+    background-color: #00ffff;
+    padding: 10px;
+    border: 5px dotted #ff0000;
+    animation: bounce 2s infinite alternate;
+}
+
+.mascot {
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px; /* Add spacing below the mascot */
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 20px 0; /* Increase spacing between links and header */
+}
+
+nav li {
+    margin: 0 20px; /* Add more spacing between navigation items */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Main content */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the main UI horizontally */
+    flex-grow: 1; /* Take remaining space in the viewport */
+    width: 100%;
+    max-width: 700px; /* Limit content width for better readability */
+    padding: 30px;
+    gap: 30px; /* Add more space between sections */
+}
+
+/* Forms and Inputs */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align form elements to the left */
+    gap: 20px; /* Add vertical spacing between form elements */
+    width: 100%;
+}
+
+input, button, textarea {
+    width: 100%; /* Stretch inputs to fit the form width */
+    max-width: 500px; /* Prevent overly wide inputs */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical; /* Allow resizing vertically */
+    min-height: 100px;
+}
+
+/* Buttons */
+button {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.2rem;
+    background-color: #ffff00;
+    color: #000000;
+    border: 2px solid #ff0000;
+    animation: rotateColors 1s infinite;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #005500;
+}
+
+/* Privacy popup */
+.privacy-popup {
+    background-color: #dfffe0;
+    border: 1px solid #008000;
+    padding: 20px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    text-align: center; /* Center text in the popup */
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Password hints */
+#passwordHints {
+    text-align: left; /* Align the text to the left */
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto; /* Center the list in the form */
+    padding: 20px;
+    background-color: #f0f8ff;
+    border: 1px solid #0066cc;
+    border-radius: 5px;
+    line-height: 1.8; /* Increase line height for better readability */
+}
+
+#passwordHints li {
+    color: #ff0000;
+}
+
+#passwordHints li.valid {
+    color: #008000;
+}
+
+/* Section titles */
+main section h2 {
+    text-align: left; /* Align section titles to the left */
+    width: 100%;
+    max-width: 700px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 30px; /* Add spacing above the footer */
+}
+/* Themes */
+body.blue {
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+body.green {
+    background-color: #e0ffe0;
+    color: #333;
+}
+
+body.dark {
+    background-color: #333;
+    color: #f0f8ff;
+}
+/* Privacy Popup Modal */
+.privacy-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 1000; /* Ensure it appears above everything else */
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.privacy-popup.show {
+    visibility: visible;
+    opacity: 1; /* Show modal with fade-in effect */
+}
+
+.privacy-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.privacy-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.privacy-content p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.privacy-content a {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+.privacy-content button {
+    background-color: #008000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.privacy-content button:hover {
+    background-color: #005500;
+}
+button, .login-btn {
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover, .login-btn:hover {
+    background-color: var(--button-hover-color);
+}
+/* Password Hint Animation */
+.password-hint {
+    color: #cc0000;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+/* Popup Background */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s;
+}
+
+/* Popup Hidden State */
+.popup.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Popup Content */
+.popup-content {
+    background-color: #ff0000;
+    color: #00ffff;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 1.5rem;
+    border: 5px solid #ffff00;
+    transform: rotate(-5deg);
+    animation: shake 0.5s infinite;
+}
+
+.popup-content h2 {
+    color: #cc0000;
+}
+
+.popup-content button {
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #990000;
+}
+@keyframes chaoticBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+}
+@keyframes rotateColors {
+    0% { background-color: #ff0000; color: #00ff00; }
+    50% { background-color: #00ff00; color: #0000ff; }
+    100% { background-color: #0000ff; color: #ff0000; }
+}
+@keyframes shake {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+#newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: repeating-linear-gradient(
+        -45deg,
+        #ff0000,
+        #ff0000 10px,
+        #00ff00 10px,
+        #00ff00 20px
+    );
+    padding: 20px;
+    border: 3px dashed #0000ff;
+}
+#newsletter-form input,
+#newsletter-form button {
+    font-size: 1.2rem;
+    padding: 5px;
+}
+a {
+    color: #ff00ff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'Courier New', monospace;
+    animation: colorCycle 2s infinite;
+}
+@keyframes colorCycle {
+    0% { color: #ff0000; }
+    25% { color: #00ff00; }
+    50% { color: #0000ff; }
+    75% { color: #ffff00; }
+    100% { color: #ff0000; }
+}
+#green-cat {
+    position: fixed;
+    width: 100px;
+    height: auto;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Prevent interaction */
+}
+
+#green-cat img {
+    width: 100%;
+    animation: bounce 1.5s infinite alternate;
+}
+
+/* Optional bounce animation */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}

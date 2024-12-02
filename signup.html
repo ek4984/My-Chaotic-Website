@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - GreenCat Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="images/green-cat.png" alt="Green Cat Mascot" class="mascot">
+        <h1>Sign Up for GreenCat Hub</h1>
+    </header>
+
+    <main>
+        <section>
+            <form id="signupForm" onsubmit="return validateSignUp()">
+                <label for="signup-username">Username (12-15 characters, no numbers or special characters):</label>
+                <input type="text" id="signup-username" placeholder="Enter username" required>
+
+                <label for="signup-password">Password (20+ characters, extra complicated):</label>
+                <input type="password" id="signup-password" placeholder="Enter password" required>
+                <p class="password-hint">Hint: No dictionary words allowed!</p>
+
+                <label for="signup-email">Email (must include at least one digit):</label>
+                <input type="email" id="signup-email" placeholder="Enter email" required>
+
+                <div id="captcha-container">
+                    <p>Prove you're not a robot:</p>
+                    <input type="checkbox" id="signup-captcha" required>
+                    <label for="signup-captcha">I am not a robot</label>
+                </div>
+
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="login.html">Login here</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 GreenCat Hub. All rights reserved.</p>
+    </footer>
+    <div class="privacy-popup" id="privacyModal">
+    <div class="privacy-content">
+        <h2>We Value Your Privacy</h2>
+        <p>
+            We use cookies and other data to improve your experience. By continuing to use our website, you consent to this. Please review our 
+            <a href="#">Privacy Policy</a> for more details.
+        </p>
+        <button onclick="acceptPrivacy()">Accept</button>
+    </div>
+</div>
+    <div id="newsletter-popup" class="popup hidden">
+    <div class="popup-content">
+        <h2>Join Our Newsletter!</h2>
+        <p>Stay updated with the latest from GreenCat Hub. Sign up now!</p>
+        <form id="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <button class="close-popup" onclick="closeNewsletterPopup()">Close</button>
+    </div>
+</div>
+<div id="green-cat">
+    <img src="images/green-cat.png" alt="Green Cat Mascot">
+</div>
+</body>
+</html>

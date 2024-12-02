@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenCat Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <img src="images/green-cat.png" alt="Green Cat Mascot" class="mascot">
+    <h1>Welcome to GreenCat Hub</h1>
+    <nav>
+        <ul>
+            <li><a href="newsletter.html">Newsletter</a></li>
+            <li><a href="social.html">Social Network</a></li>
+            <li><a href="personalized.html">Personalized Feature</a></li>
+        </ul>
+        <button onclick="location.href='login.html'" class="login-btn">Login</button>
+    </nav>
+</header>
+
+    <main>
+        <section>
+            <h2>Welcome to GreenCat Hub</h2>
+            <p>Navigate through the tabs to explore our features.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 GreenCat Hub. All rights reserved.</p>
+    </footer>
+    <div class="privacy-popup" id="privacyModal">
+    <div class="privacy-content">
+        <h2>We Value Your Privacy</h2>
+        <p>
+            We use cookies and other data to improve your experience. By continuing to use our website, you consent to this. Please review our 
+            <a href="#">Privacy Policy</a> for more details.
+        </p>
+        <button onclick="acceptPrivacy()">Accept</button>
+    </div>
+</div>
+<div id="newsletter-popup" class="popup hidden">
+    <div class="popup-content">
+        <h2>Join Our Newsletter!</h2>
+        <p>Stay updated with the latest from GreenCat Hub. Sign up now!</p>
+        <form id="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <button class="close-popup" onclick="closeNewsletterPopup()">Close</button>
+    </div>
+</div>
+<div id="newsletter-popup" class="popup hidden">
+    <div class="popup-content">
+        <h2>💌 Sign Up for CHAOS!</h2>
+        <p>Stay updated with the latest nonsense from GreenCat Hub!</p>
+        <form id="newsletter-form">
+            <input type="email" placeholder="Enter your email here... if you dare!" required>
+            <button type="submit">YES, SUBSCRIBE ME!</button>
+        </form>
+        <button class="close-popup" onclick="closeNewsletterPopup()">NO THANKS</button>
+    </div>
+</div>
+<div id="green-cat">
+    <img src="images/green-cat.png" alt="Green Cat Mascot">
+</div>
+</body>
+</html>
